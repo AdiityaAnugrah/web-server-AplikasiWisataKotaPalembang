@@ -15,6 +15,7 @@ $routes->setDefaultController('Home');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
+
 // The Auto Routing (Legacy) is very dangerous. It is easy to create vulnerable apps
 // where controller filters or CSRF protection are bypassed.
 // If you don't want to define all routes, please use the Auto Routing (Improved).
@@ -43,17 +44,11 @@ $routes->get('dashboard', 'Admin\DashboardController::index');
 
 //Routes ADMIN PRODUK
 $routes->get('produk', 'Admin\ProdukController::index');
-$routes->get('produk/tambah', 'Admin\ProdukController::create');
-$routes->post('produk/create_data', 'Admin\ProdukController::create_data');
 
-
-
-//Routes ADMIN kategori
-$routes->get('kategori', 'Admin\ProdukController::kategori');
 
 //Routes ADD DATA
 $routes->get('/add_data_wisata', 'Wisata::add_data_wisata');
-$routes->post('produk/proses_add_wisata', 'Wisata::proses_add_wisata');
+$routes->post('/proses_add_wisata', 'Wisata::proses_add_wisata');
 
 //Routes EDIT DATA
 $routes->get('/edit_data_wisata/(:any)', 'Wisata::edit_data_wisata/$1');

@@ -21,7 +21,7 @@ class Wisata extends BaseController
     public function proses_add_wisata(){
         $wisata_model = new WisataModel();
         $wisata_model->insert($this->request->getPost());  //Menambahkan DATA ke DATABASE
-        return redirect()->to(base_url('wisata'));
+        return redirect()->to(base_url('produk'));
     }
 
     public function edit_data_wisata($id = false){
